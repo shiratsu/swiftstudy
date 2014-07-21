@@ -1,0 +1,73 @@
+手順メモ
+右上のテンプレートで作成
+cocoaでファイルを作成(TaskManager)
+import Cocoa -> import UIKit
+TaskManagerを作成
+
+Stroyboard -> Auto Layoutを解除
+iPhone5sを選択
+FirstViewの内容を削除
+tableViewを貼付ける
+大きさあわせる
+Firstのボタンをクリック
+Bar Itemのタイトルを変更 First -> Tasks
+Secondのボタンをクリック -> Add New へタイトルを変更
+
+First
+Table Viewで右クリック -> Outlets -> dataSourceとdelegateをFirstViewControllerにひもづける
+FirstViewControllerに移動
+UITableViewDelegateとUITableViewDataSourceを継承
+UITableDataSourceの中をみると二つの関数があってそれを実装する必要がある
+上をコピーそして下をコピー
+もろもろ入力
+
+Second
+Storyboardの中身を削除
+labelを貼付ける -> Add Taskと名前を変える
+大きくする
+TextFieldを二つ用意
+PlaceHolderにTask Name, Descriptionと二つに名前をつける
+AddTaskと書いたボタンを設置
+TextField 右クリック -> Outlets -> DelegateをSecondViewControllerにひもづける
+Task Name, Descriptionの二つをひもづける
+SecondViewControllerに移動(Programm)
+UITextFieldDelegateを継承
+その先に飛んでShouldReturnを実装する
+実装後、動かしてみる
+
+IOS Touch Functions, @IBOutlet txtTask, txtDesc, //Event @IBAction UIButton を追加し、実装
+Storyboard
+buttonを右クリック -> Touch Ui InsideをSecondViewControllerひもづける
+-> buttonClickと出るのでそれを選択
+TextFieldを右クリック -> Referenceing Outlets -> New Referencing Outlet Collection を
+Second View ControllerにひもづけてtxtTaskを選択
+Desctiptionも同様にするtxtDesc
+実行 -> Add Taskをクリックするとデバッグモードで設定した文字列が表示される！
+
+クリックイベントを変更する
+self.tabBarController.selectIndex = 0 あで書いたらFirstViewControllerへ
+First
+@IBOutlet var tblTask: UITabelView を追記
+Storyboard
+Table Viewで右クリック -> Referencing Outlets
+-> New Referencing Outlet で FirsViewControllerにひも付け(tblTaskに)
+First
+viewWillAppearを実装
+実行
+入力したものが追加されるね！
+
+First
+CommitEditingStyle をUITableViewDelegateから探す
+// UITableViewDelegate部分を実装
+delete部分完成 -> 実行 -> Delete this nowが表示される
+
+First
+delete部分作成
+実行
+何個か追加！！ ->
+
+
+
+
+
+
