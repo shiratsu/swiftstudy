@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>62437D5D-E9F7-4F1E-A8CB-641AA1319CCF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TodoList</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9B263502AEA0E47AFD69A738C5786A19BA8FE615</key>
+		<string>github.com:kaisou4537/swiftstudy.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>swift_4/TodoList/TodoList.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9B263502AEA0E47AFD69A738C5786A19BA8FE615</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:kaisou4537/swiftstudy.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9B263502AEA0E47AFD69A738C5786A19BA8FE615</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9B263502AEA0E47AFD69A738C5786A19BA8FE615</string>
+			<key>IDESourceControlWCCName</key>
+			<string>swiftlearn</string>
+		</dict>
+	</array>
+</dict>
+</plist>
