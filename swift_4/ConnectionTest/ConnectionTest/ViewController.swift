@@ -2,9 +2,6 @@
 //  ViewController.swift
 //  ConnectionTest
 //
-//  Created by 佐々木 健 on 2014/09/04.
-//  Copyright (c) 2014年 佐々木 健. All rights reserved.
-//
 
 import UIKit
 
