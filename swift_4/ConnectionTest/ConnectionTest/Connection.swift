@@ -6,6 +6,7 @@ import Foundation
 
 protocol ConnectionResult{
     func showResult(resultMessage: String?) -> Void
+    func handleError()
 }
 
 public class Connection : NSObject{
@@ -18,6 +19,8 @@ public class Connection : NSObject{
     var urlStr : String
     var data : NSMutableData? = nil
     var delegate : ConnectionResult!
+    var error:NSError?
+    var status:Int?
     
     // コンストラクタ
     public init(urlStr: String) {
@@ -27,11 +30,11 @@ public class Connection : NSObject{
     
     // アクセス
     public func doConnect() -> Void{
-        var url : NSURL = NSURL(string: urlStr)
+        var url : NSURL = NSURL(string: urlStr)!
         // キャッシュを無視
         var request : NSURLRequest = NSURLRequest(URL: url, cachePolicy:NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 60.0)
         
-        var connect : NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: true)
+        var connect : NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: true)!
         connect.start()
     }
     
@@ -39,8 +42,17 @@ public class Connection : NSObject{
     func connection(didReceiveResponse: NSURLConnection!, didReceiveResponse response: NSURLResponse!) {
         // Recieved a new request, clear out the data object
         data = NSMutableData()
+        status = (response as NSHTTPURLResponse).statusCode
         println("success")
     }
+    
+    //エラーを受け取った時のdelegate
+    func connection(connection: NSURLConnection, didFailWithError error: NSError){
+        self.error = error
+        self.delegate.handleError()
+    }
+    
+    
     
     // サーバからデータが送られてきたときのデリゲート
     func connection(connection: NSURLConnection!, didReceiveData data: NSData!){
@@ -50,7 +62,7 @@ public class Connection : NSObject{
     // データロードが完了したときのデリゲート
     func connectionDidFinishLoading(connection: NSURLConnection!){
         // バイナリデータが発行される
-        let html : String = NSString(data: self.data!, encoding: NSUTF8StringEncoding)
+        let html : String = NSString(data: self.data!, encoding: NSUTF8StringEncoding)!
         println(html)
         
         // 処理を呼び出すだけ
